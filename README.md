@@ -1,6 +1,8 @@
 # icinga2
-Icinga2 Remote api module
+Icinga2 Remote api module. You can create, remove, update, etc of icinga2 objects
+
 [Icinga2 api doc](https://docs.icinga.com/icinga2/latest/doc/module/icinga2/chapter/icinga2-api)
+
 ## Installation
 
     npn install icinga2-api
@@ -59,4 +61,4 @@ var icingaServer = new icingaapi("https://icingas2server.local", "5665", "apiUse
  - updateServiceAttr = function (serviceObj, host, service, callback)
 
 ## Examples
-Check test.js for more details
+Check [test.js](https://github.com/aditosoftware/nodejs-icinga2api/blob/master/test.js) for more details
