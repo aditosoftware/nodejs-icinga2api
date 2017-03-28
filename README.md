@@ -6,6 +6,10 @@ Icinga2 Remote api module
     npn install icinga2-api
     
 ### Getting started
+Examle
+1. Check if the host icinga2 exist in monitoring
+2. If not create a host "icinga2"
+
 ``` js
 const icingaapi = require('icinga2-api')
 var icingaServer = new icingaapi("https://icingas2server.local", "5665", "apiUser", "apiUserPass");
