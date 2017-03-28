@@ -1,0 +1,26 @@
+{
+  "name": "icinga2-api",
+  "version": "1.0.0",
+  "description": "Nodejs Modul to control Icinga2 through api",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aditosoftware/nodejs-icinga2api.git"
+  },
+  "keywords": [
+    "icinga2",
+    "api"
+  ],
+  "author": "Adito Software GmbH <info@adito.de> (http://www.adito.de)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aditosoftware/nodejs-icinga2api/issues"
+  },
+  "homepage": "https://github.com/aditosoftware/nodejs-icinga2api#readme",
+  "engines": {
+    "node": ">=5.0.0"
+  }
+}
