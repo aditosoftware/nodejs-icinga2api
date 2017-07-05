@@ -8,24 +8,26 @@ Icinga2 Remote api module. You can create, remove, update, etc of icinga2 object
     npn install icinga2-api
     
 ### Getting started
-Examle
-1. Check if the host icinga2 exist in monitoring
-2. If not create a host "icinga2"
+Example
+
+1. Check if the host "4demo" exist in monitoring.
+2. If not, create host "4demo".
 
 ``` js
-const icingaapi = require('icinga2-api')
-var icingaServer = new icingaapi("https://icingas2server.local", "5665", "apiUser", "apiUserPass");
-    icingaServer.getHostState("icinga2", function (err, result) {
+const icingaapi = require('icinga2-api');
+
+var icingaServer = new icingaapi("icingas2server.local", "5665", "apiUser", "apiUserPass");
+    icingaServer.getHostState("4demo", function (err, result) {
         if (err) {
             if (err.Statuscode == "404") {
-                console.log("Host icinga2 on monitoring was not found, create one");
+                console.log("Host 4demo on monitoring was not found, create one");
                 
-                //create a host on icinga2
+                // Create a host on icinga2.
                 icingaServer.createHost("passive-host", "4demo", "4Demo Server", "adito", servername, function (err, result) {
                     if (err) {
                         console.error(err);
                     } else {
-                        console.log("Host icinga2 was created successfull");
+                        console.log("Host 4demo was created successfull");
                     }
                 });
             }
