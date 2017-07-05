@@ -94,7 +94,7 @@ icingaapi.prototype.getHostFiltered = function (filter, callback) {
         auth: self.user + ":" + self.pass,
         headers: {
             "Accept": "application/json",
-            "Content-Type": "applicatoin/json"
+            "Content-Type": "application/json"
         }
     }
     var req = https.request(options, function (res) {
@@ -210,7 +210,7 @@ icingaapi.prototype.getServiceWithState = function (state, callback) {
         auth: self.user + ":" + self.pass,
         headers: {
             "Accept": "application/json",
-            "Content-Type": "applicatoin/json"
+            "Content-Type": "application/json"
         }
     }
     var req = https.request(options, (res) => {
@@ -267,7 +267,7 @@ icingaapi.prototype.createService = function (template, host, service, displayna
         method: 'PUT',
         headers: {
             "Accept": "application/json",
-            "Content-Type": "applicatoin/json"
+            "Content-Type": "application/json"
         }
     };
     var req = https.request(options, (res) => {
@@ -306,7 +306,7 @@ icingaapi.prototype.createServiceCustom = function (serviceObj, host, service, c
         method: 'PUT',
         headers: {
             "Accept": "application/json",
-            "Content-Type": "applicatoin/json"
+            "Content-Type": "application/json"
         }
     };
     var req = https.request(options, (res) => {
@@ -340,7 +340,7 @@ icingaapi.prototype.createHostCustom = function (hostObj, host, callback) {
         method: 'PUT',
         headers: {
             "Accept": "application/json",
-            "Content-Type": "applicatoin/json"
+            "Content-Type": "application/json"
         }
     };
     var req = https.request(options, (res) => {
@@ -373,7 +373,7 @@ icingaapi.prototype.deleteHost = function (host, callback) {
         auth: self.user + ":" + self.pass,
         headers: {
             "Accept": "application/json",
-            "Content-Type": "applicatoin/json"
+            "Content-Type": "application/json"
         }
     }
 
@@ -408,7 +408,7 @@ icingaapi.prototype.deleteService = function (service, host, callback) {
         auth: self.user + ":" + self.pass,
         headers: {
             "Accept": "application/json",
-            "Content-Type": "applicatoin/json"
+            "Content-Type": "application/json"
         }
     }
 
@@ -628,7 +628,7 @@ icingaapi.prototype.setHostState = function (host, hostState, StateMessage, call
         auth: self.user + ":" + self.pass,
         headers: {
             "Accept": "application/json",
-            "Content-Type": "applicatoin/json"
+            "Content-Type": "application/json"
         }
     }
     var req = https.request(options, (res) => {
@@ -689,7 +689,7 @@ icingaapi.prototype.setServiceState = function (service, host, serviceState, ser
         auth: self.user + ":" + self.pass,
         headers: {
             "Accept": "application/json",
-            "Content-Type": "applicatoin/json"
+            "Content-Type": "application/json"
         }
     }
     var req = https.request(options, (res) => {
@@ -778,7 +778,7 @@ icingaapi.prototype.setServicePerfdata = function (service, server, state, outpu
         auth: self.user + ":" + self.pass,
         headers: {
             "Accept": "application/json",
-            "Content-Type": "applicatoin/json"
+            "Content-Type": "application/json"
         }
     }
     var req = https.request(options, function (res) {
@@ -819,7 +819,7 @@ icingaapi.prototype.setHostPerfdata = function (server, state, output, perfarr, 
         auth: self.user + ":" + self.pass,
         headers: {
             "Accept": "application/json",
-            "Content-Type": "applicatoin/json"
+            "Content-Type": "application/json"
         }
     }
     var req = https.request(options, function (res) {
@@ -853,7 +853,7 @@ icingaapi.prototype.updateHostAttr = function (hostObj, host, callback) {
         method: 'POST',
         headers: {
             "Accept": "application/json",
-            "Content-Type": "applicatoin/json"
+            "Content-Type": "application/json"
         }
     };
     var req = https.request(options, (res) => {
@@ -887,7 +887,7 @@ icingaapi.prototype.updateServiceAttr = function (serviceObj, host, service, cal
         method: 'PUT',
         headers: {
             "Accept": "application/json",
-            "Content-Type": "applicatoin/json"
+            "Content-Type": "application/json"
         }
     };
     var req = https.request(options, (res) => {
