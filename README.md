@@ -5,7 +5,7 @@ Icinga2 Remote api module. You can create, remove, update, etc of icinga2 object
 
 ## Installation
 
-    npn install icinga2-api
+    npm install icinga2-api
     
 ### Getting started
 Example
