@@ -25,7 +25,7 @@ icingaapi.prototype.getServices = function (callback) {
     }
 
     var req = https.request(options, (res) => {
-        res.on('data', (d) => {
+        res.on('data', (successMesage) => {
             state = {
                 "Statuscode": res.statusCode,
                 "StatusMessage": res.statusMessage,
