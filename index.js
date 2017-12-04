@@ -2,12 +2,12 @@
 
 const https = require("https");
 
-var icingaapi = function (url, port, user, pass, timeout) {
+var icingaapi = function (url, port, user, pass) {
     this.url = url;
     this.port = port;
     this.user = user;
     this.pass = pass;
-    this.timeout = timeout;
+    this.timeout = 15000;
 }; //construct
 
 icingaapi.prototype.getServices = function (callback) {
