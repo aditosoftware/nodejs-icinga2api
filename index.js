@@ -94,7 +94,8 @@ icingaapi.prototype.getHostFiltered = function (filter, callback) {
         auth: self.user + ":" + self.pass,
         headers: {
             "Accept": "application/json",
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            "X-HTTP-Method-Override": "GET"
         }
     }
     var req = https.request(options, function (res) {
@@ -210,7 +211,8 @@ icingaapi.prototype.getServiceWithState = function (state, callback) {
         auth: self.user + ":" + self.pass,
         headers: {
             "Accept": "application/json",
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            "X-HTTP-Method-Override": "GET"
         }
     }
     var req = https.request(options, (res) => {
