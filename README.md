@@ -117,6 +117,10 @@ var icingaServer = new icingaapi("icingas2server.local", "5665", "apiUser", "api
  - setHostState = function (host, hostState, StateMessage, callback)
  - setServiceState = function (service, host, serviceState, serviceMessage, callback)
  - getHostState = function (hostName, callback)
+ - getServiceTemplates = function(callback)
+ - checkExistServiceTemplate = function(name, callback)
+ - getHostTemplates = function(callback)
+ - checkExistHostTemplate = function(name, callback)
  - setServicePerfdata = function (service, server, state, output, perfarr, callback)
     * perfarr (Data array) - show process-check-result in [icinga2 api doc](https://docs.icinga.com/icinga2/latest/doc/module/icinga2/chapter/icinga2-api)
         ```js
