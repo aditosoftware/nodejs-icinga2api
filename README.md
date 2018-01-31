@@ -43,6 +43,16 @@ var icingaServer = new icingaapi("icingas2server.local", "5665", "apiUser", "api
  - getHosts = function (callback)
  - getHost = function (ServerName, callback)
  - getHostFiltered = function (filter, callback)
+ - getServiceFiltered = function(filter, callback)
+   * filter = 
+      ```js
+        {
+            "filter": "service.vars.Backup_Server == servicename",
+            "filter_vars": {
+                "servicename": "backupServer"
+            }
+        }
+      ```
  - getServiceWithState = function (state, callback)
     * state = 0/1/2
  - createHost = function (template, host, displayname, gruppe, onServer, callback)

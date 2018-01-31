@@ -1,6 +1,6 @@
 {
   "name": "icinga2-api",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "Nodejs Modul to control Icinga2 through api",
   "main": "index.js",
   "scripts": {
