@@ -73,6 +73,15 @@ var icingaServer = new icingaapi("icingas2server.local", "5665", "apiUser", "api
             }
         })
         ```
+ - createServiceCustom = function (serviceObj, host, service, callback)
+     * serviceObj
+        ```js
+        var serviceBody = JSON.stringify({
+            "templates": ["passive-service"],
+            "attrs": {
+                "display_name": "Service on 4Demo Server",
+            }
+        })
  - deleteHost = function (host, callback)
  - deleteService = function (service, host, callback)
  - setHostDowntime = function (dObj, hostname, callback)
