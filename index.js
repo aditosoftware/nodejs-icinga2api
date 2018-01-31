@@ -116,6 +116,44 @@ icingaapi.prototype.getHostFiltered = function (filter, callback) {
     });
     req.end(JSON.stringify(filter));
 }
+
+icingaapi.prototype.getServiceFiltered = function (filter, callback) {
+    var self = this;
+    var resData = '';
+
+    var options = {
+        hostname: self.url,
+        timeout: self.timeout,
+        port: self.port,
+        path: '/v1/objects/services/',
+        method: 'POST',
+        rejectUnauthorized: false,
+        auth: self.user + ":" + self.pass,
+        headers: {
+            "Accept": "application/json",
+            "Content-Type": "application/json",
+            "X-HTTP-Method-Override": "GET"
+        }
+    }
+    var req = https.request(options, function (res) {
+        res.on('data', function (chunk) {
+            resData += chunk;
+        })
+        res.on('end', function () {
+            if (res.statusCode == "200") {
+                var output = JSON.parse(resData);
+                return callback(null, output.results);
+            } else {
+                return callback({
+                    "Statuscode": res.statusCode,
+                    "StatusMessage": res.statusMessage
+                }, null);
+            }
+        })
+    });
+    req.end(JSON.stringify(filter));
+}
+
 icingaapi.prototype.getService = function (ServerName, ServiceName, callback) {
     var self = this;
     var state;
@@ -672,13 +710,13 @@ icingaapi.prototype.setServiceState = function (service, host, serviceState, ser
         state.plugin_output = serviceMessage;
     }
     if (serviceState == 1) {
-        state.plugin_output = "WARNING";
+        state.plugin_output = "WARNING: " + serviceState;
     }
     if (serviceState == 2) {
-        state.plugin_output = "ERROR";
+        state.plugin_output = "ERROR: " + serviceState;
     }
     if (serviceState == 3) {
-        state.plugin_output = "UNKNOWN";
+        state.plugin_output = "UNKNOWN:" + serviceState;
     }
 
     var options = {
