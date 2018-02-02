@@ -710,13 +710,13 @@ icingaapi.prototype.setServiceState = function (service, host, serviceState, ser
         state.plugin_output = serviceMessage;
     }
     if (serviceState == 1) {
-        state.plugin_output = "WARNING: " + serviceState;
+        state.plugin_output = "WARNING: " + serviceMessage;
     }
     if (serviceState == 2) {
-        state.plugin_output = "ERROR: " + serviceState;
+        state.plugin_output = "ERROR: " + serviceMessage;
     }
     if (serviceState == 3) {
-        state.plugin_output = "UNKNOWN:" + serviceState;
+        state.plugin_output = "UNKNOWN:" + serviceMessage;
     }
 
     var options = {
