@@ -13,6 +13,9 @@ Example
 1. Check if the host "4demo" exist in monitoring.
 2. If not, create host "4demo".
 
+## Updated
+The parameters 'group' and 'onServer' was removed from methode 'createHost' and 'createService'
+
 ``` js
 const icingaapi = require('icinga2-api');
 
@@ -23,7 +26,7 @@ var icingaServer = new icingaapi("icingas2server.local", "5665", "apiUser", "api
                 console.log("Host 4demo on monitoring was not found, create one");
                 
                 // Create a host on icinga2.
-                icingaServer.createHost("passive-host", "4demo", "4Demo Server", "adito", servername, function (err, result) {
+                icingaServer.createHost("passive-host", "4demo", "4Demo Server", function (err, result) {
                     if (err) {
                         console.error(err);
                     } else {
@@ -55,10 +58,10 @@ var icingaServer = new icingaapi("icingas2server.local", "5665", "apiUser", "api
       ```
  - getServiceWithState = function (state, callback)
     * state = 0/1/2
- - createHost = function (template, host, displayname, gruppe, onServer, callback)
+ - createHost = function (template, host, displayname, callback)
     * template - icinga2 host-template
     * onServer = "dockerHost", set a custom variable in icinga2
- - createService = function (template, host, service, displayname, gruppe, onServer, callback)
+ - createService = function (template, host, service, displayname, callback)
  - createServiceCustom = function (serviceObj, host, service, callback)
     * serviceObj = 
         ```js

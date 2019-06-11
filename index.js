@@ -23,13 +23,13 @@ icingaapi.prototype.getServices = function (callback) {
         rejectUnauthorized: false,
         auth: self.user + ":" + self.pass,
     }
-
+    var dataOut = '';
     var req = https.request(options, (res) => {
         res.on('data', (successMesage) => {
+          dataOut += successMesage
             state = {
                 "Statuscode": res.statusCode,
-                "StatusMessage": res.statusMessage,
-                "Statecustom": successMesage
+                "StatusMessage": res.statusMessage
             }
         });
     });
@@ -42,7 +42,7 @@ icingaapi.prototype.getServices = function (callback) {
 
     req.on('close', function (e) {
         if (state.Statuscode == "200") {
-            return callback(null, "" + state.Statecustom);
+            return callback(null, "" + dataOut);
         } else {
             return callback("" + state);
         }
@@ -272,29 +272,25 @@ icingaapi.prototype.getServiceWithState = function (state, callback) {
         return callback(e, null);
     });
 }
-icingaapi.prototype.createHost = function (template, host, displayname, gruppe, onServer, callback) {
+icingaapi.prototype.createHost = function (template, host, displayname, callback) {
     var self = this;
     var state;
     var hostObj = JSON.stringify({
         "templates": [template],
         "attrs": {
-            "display_name": displayname,
-            "vars.group": gruppe,
-            "vars.server": onServer
+            "display_name": displayname
         }
     })
     this.createHostCustom(hostObj, host, callback);
 }
-icingaapi.prototype.createService = function (template, host, service, displayname, gruppe, onServer, callback) {
+icingaapi.prototype.createService = function (template, host, service, displayname, callback) {
     var self = this;
     var state;
 
     var serviceObj = JSON.stringify({
         "templates": [template],
         "attrs": {
-            "display_name": displayname,
-            "vars.group": gruppe,
-            "vars.server": onServer
+            "display_name": displayname
         }
     })
     var options = {
